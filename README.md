@@ -22,11 +22,11 @@ the portfolio of **Syed Addan**, a ***Machine Learning Engineer*** who loves ble
 
 ---
 
-## 🎉 What's Special About Folio?
+## 🧑‍🤝‍🧑 For the normal people
 
 Imagine a portfolio that ***talks***. With Folio, you can ask the Voice AI anything about Syed’s work, skills, or projects—and it will answer truthfully, just like having a friendly conversation.
 
-Here’s why Folio stands out:
+### 🪄 Here’s why Folio stands out
 
 - **A Conversational Portfolio**: No need to *read walls of text*. Simply ask, and the Voice AI will do the rest!
 - **Smart Search**: Whether you're curious about his resume or LinkedIn, Folio finds the right answers from the right place.
@@ -34,15 +34,11 @@ Here’s why Folio stands out:
 
 ### 🌟 Why Folio?
 
-Because it proves Syed doesn't just understand technology—he makes it work in delightful, practical ways. If you’d like to connect:
-
-- [LinkedIn](https://linkedin.com/in/syedaddan)
-- [Discord](https://discordapp.com/users/557548825154420737)
-- [Email](mailto:syedaddan@gmail.com)
+Because it proves Syed doesn't just understand technology—he makes it work in delightful, practical ways.
 
 ---
 
-## 🧑‍💻 For the Eclectic Species called the Developers
+## 🧑‍💻 For the eccentric developers
 
 If you’re still scrolling, you’ve unlocked a little treasure: the "how" behind Folio. 🛠️
 
@@ -115,3 +111,9 @@ If you've scrolled this far, you're in the secret club. Remember, every line of 
 
 Folio is more than a portfolio—it’s Syed Addan's story, told in the most engaging way possible.
 Whether you’re here to hire or learn, welcome aboard! 🌟
+
+If you’d like to connect:
+
+- [LinkedIn](https://linkedin.com/in/syedaddan)
+- [Discord](https://discordapp.com/users/557548825154420737)
+- [Email](mailto:syedaddan@gmail.com)
