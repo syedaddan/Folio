@@ -3,7 +3,7 @@
 ---
 
 <div align="center">
-	<img src="/assets/folio.gif" height="300">
+	<img src="/assets/folio.gif" height="600">
 </div>
 
 <br>
