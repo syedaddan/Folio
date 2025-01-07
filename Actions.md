@@ -25,6 +25,7 @@
   - [ ] Hover over resources to take a sneak peek in a pop up
   - [ ] The sneak peek should have a button to open the resource in a new tab
   - [ ] Smooth animations and transitions between these pop ups
+- [ ] Finalize the logo icon :)
 
 ## Can Do
 
