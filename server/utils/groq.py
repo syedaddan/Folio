@@ -2,6 +2,7 @@ import os
 import time
 import asyncio
 import logging
+from dotenv import load_dotenv
 
 from openai import AsyncOpenAI
 from livekit.agents import (
@@ -18,6 +19,8 @@ from utils.prompts import sys_prompt, summarize_content
 
 logger = logging.getLogger("voice-assistant")
 logger.setLevel(logging.INFO)
+
+load_dotenv()
 
 lock = asyncio.Lock()
 client = AsyncOpenAI(
