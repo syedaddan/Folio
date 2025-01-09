@@ -2,6 +2,7 @@ import "@livekit/components-styles";
 import "./globals.css";
 import { Public_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import React from "react";
 
 const publicSans400 = Public_Sans({
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className="h-full">
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
