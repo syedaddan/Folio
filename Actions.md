@@ -2,18 +2,19 @@
 
 ## Todo
 
-- [ ] Finish the basic pipeline
 - [ ] Set up cloud and deploy
 
 ## In Progress
 
 - [ ] Ideation and planning
-- [ ] Finish up the initial Readme file
+- [ ] Finish the basic pipeline
 
 ## Done
 
+- [x] Add docker files
 - [x] Set up github repo
 - [x] Add basic structure to the Readme file
+- [x] Finish up the initial Readme file
 - [x] Set up the API servies
 - [x] Set up the LiveKit server
 
