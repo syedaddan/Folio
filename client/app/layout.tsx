@@ -1,6 +1,7 @@
 import "@livekit/components-styles";
 import "./globals.css";
 import { Public_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react"
 import React from "react";
 
 const publicSans400 = Public_Sans({
@@ -15,7 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`h-full ${publicSans400.className}`}>
-      <body className="h-full">{children}</body>
+      <body className="h-full">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
