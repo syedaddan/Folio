@@ -6,7 +6,7 @@
 	<img src="/assets/folio.gif" height="600">
 </div>
 
-<br>
+---
 
 <div align="center">
    <img src="/assets/made-with-python.svg">

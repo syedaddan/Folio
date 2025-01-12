@@ -1,0 +1,20 @@
+# Use Python 3.11 as the base image
+FROM python:3.11-slim
+
+# Set the working directory inside the container
+WORKDIR /folio
+
+# Copy the requirements file into the container at /marketing
+COPY ./requirements.txt ./requirements.txt
+
+# Install any needed packages specified in requirements.txt
+RUN pip install -r requirements.txt
+
+# Copy the server source code into the container
+COPY . .
+
+# Run this command to download the initial files for the models i.e. silero VAD
+RUN python main.py download-files
+
+# Command to start the server
+CMD ["python", "main.py", "start"]

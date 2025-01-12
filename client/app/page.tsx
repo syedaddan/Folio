@@ -18,7 +18,7 @@ import { CloseIcon } from "../components/CloseIcon";
 import { useKrispNoiseFilter } from "@livekit/components-react/krisp";
 
 export default function Page() {
-  const [connectionDetails, updateConnectionDetails] = useState<ConnectionDetails | undefined>(undefined);
+  const [connectionDetails, setConnectionDetails] = useState<ConnectionDetails | undefined>(undefined);
   const [agentState, setAgentState] = useState<AgentState>("disconnected");
 
   const onConnectButtonClicked = useCallback(async () => {
@@ -38,7 +38,7 @@ export default function Page() {
     );
     const response = await fetch(url.toString());
     const connectionDetailsData = await response.json();
-    updateConnectionDetails(connectionDetailsData);
+    setConnectionDetails(connectionDetailsData);
   }, []);
 
   return (
@@ -54,7 +54,7 @@ export default function Page() {
         video={false}
         onMediaDeviceFailure={onDeviceFailure}
         onDisconnected={() => {
-          updateConnectionDetails(undefined);
+          setConnectionDetails(undefined);
         }}
         className="grid grid-rows-[2fr_1fr] items-center"
       >
