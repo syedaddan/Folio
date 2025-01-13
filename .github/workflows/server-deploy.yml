@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -16,7 +19,7 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS}}
+          creds: ${{secrets.AZURE_CREDENTIALS}}
 
       - name: Deploy to Azure VM
         run: |
@@ -24,4 +27,4 @@ jobs:
             --command-id RunShellScript \
             --name folio-vm \
             --resource-group folio-resource \
-            --scripts "sudo docker stop folio && sudo docker rm folio && cd /home/azureuser/Folio && git pull origin main && cd /home/azureuser/Folio/server && sudo docker build -t folio . && sudo docker run -d --name folio folio"
+            --scripts "cd /home/azureuser/Folio && git pull origin main && cd /home/azureuser/Folio/server && sudo docker build -t folio . && sudo docker run -d --name folio folio"
