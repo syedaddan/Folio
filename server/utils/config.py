@@ -6,6 +6,7 @@ from livekit.agents import JobProcess
 def prewarm_with_vad(proc: JobProcess):
     proc.userdata["vad"] = silero.VAD.load(
         min_silence_duration=0.3,
+        activation_threshold=0.7
     )
 
 
