@@ -12,6 +12,7 @@
 ## Done
 
 - [x] Add docker files
+- [x] CI/CD setup
 - [x] Set up github repo
 - [x] Add basic structure to the Readme file
 - [x] Finish up the initial Readme file
