@@ -27,4 +27,4 @@ jobs:
             --command-id RunShellScript \
             --name folio-vm \
             --resource-group folio-resource \
-            --scripts "cd /home/azureuser/Folio && git pull origin main && cd /home/azureuser/Folio/server && sudo docker build -t folio . && sudo docker run -d --name folio folio"
+            --scripts "git config --global --add safe.directory /home/azureuser/Folio && cd /home/azureuser/Folio && git pull origin main && cd /home/azureuser/Folio/server && sudo docker build -t folio . && sudo docker run -d --name folio folio"
