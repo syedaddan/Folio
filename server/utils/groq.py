@@ -9,9 +9,9 @@ from livekit.agents import (
     AutoSubscribe,
     JobContext,
     llm,
-    metrics
+    metrics,
+    VoicePipelineAgent
 )
-from livekit.agents.pipeline import VoicePipelineAgent
 from livekit.plugins import openai, deepgram, elevenlabs
 
 from utils.prompts import sys_prompt, summarize_content

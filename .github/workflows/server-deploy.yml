@@ -1,4 +1,4 @@
-name: Deploy to Azure VM
+name: Deploy to AWS EC2
 
 on:
   push:
@@ -16,15 +16,37 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Login to Azure
-        uses: azure/login@v1
-        with:
-          creds: ${{secrets.AZURE_CREDENTIALS}}
-
-      - name: Deploy to Azure VM
+      - name: Setup SSH
         run: |
-          az vm run-command invoke \
-            --command-id RunShellScript \
-            --name folio-vm \
-            --resource-group folio-resource \
-            --scripts "export HOME=/home/azureuser && git config --global --add safe.directory /home/azureuser/Folio && cd /home/azureuser/Folio && git pull origin main && cd /home/azureuser/Folio/server && sudo docker build -t folio . && sudo docker run -d --name folio folio"
+          mkdir -p ~/.ssh
+          echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to AWS EC2 via SSH
+        run: |
+          ssh -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+            export HOME=/home/${{ secrets.EC2_USER }}
+            
+            # Check if Folio directory exists, if not clone it
+            if [ ! -d "/home/${{ secrets.EC2_USER }}/Folio" ]; then
+              echo "Folio directory not found. Cloning repository..."
+              cd /home/${{ secrets.EC2_USER }}
+              # For public repositories:
+              git clone https://github.com/${{ github.repository }}.git Folio
+              # For private repositories, use this instead:
+              # git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git Folio
+            fi
+            
+            # Navigate to Folio directory and pull latest changes
+            cd /home/${{ secrets.EC2_USER }}/Folio
+            git config --global --add safe.directory /home/${{ secrets.EC2_USER }}/Folio
+            git pull origin main
+            
+            # Build and run Docker container
+            cd /home/${{ secrets.EC2_USER }}/Folio/server
+            sudo docker stop folio || true
+            sudo docker rm folio || true
+            sudo docker build -t folio .
+            sudo docker run -d --name folio folio
+          EOF

@@ -3,6 +3,7 @@
 ## Todo
 
 - [ ] Set up cloud and deploy
+- [ ] Add compact and essential data sources: Resume, LinkedIn page, Github Repos.
 
 ## In Progress
 
